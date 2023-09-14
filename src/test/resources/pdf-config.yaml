@@ -1,0 +1,7 @@
+displayAttached: false
+displayExpanded: true
+detailedStepHookConfig:
+  stepTextColor: 0000FF
+  durationColor: 233a77
+  errorMsgColor: ff0000
+  logMsgColor: 884b4b
