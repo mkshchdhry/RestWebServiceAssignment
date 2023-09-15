@@ -1,0 +1,1417 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Sep 15, 2023 07:38:16 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Sep 15, 2023 07:38:16 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Sep 15, 2023 07:38:42 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>2</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>2</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>26</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>131</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Different Operation for Item :: POST-PUT-PATCH-GET-DELETE":11.019,"Different Operation supported by Objects Rest API":1.466
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>8.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 2,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 26,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 131,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Different Operation for Item :: POST-PUT-PATCH-GET-DELETE</p>
+            <p class="text-sm">
+              <span>7:38:30 PM</span> / <span>00:00:11:019</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Different Operation for Item :: POST-PUT-PATCH-GET-DELETE</h5>
+<span class='badge badge-success'>09.15.2023 7:38:30 PM</span>
+<span class='badge badge-danger'>09.15.2023 7:38:41 PM</span>
+<span class='badge badge-default'>00:00:11:019</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Get API for a Item which Exists and any Existing Items</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "11" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetTheItemIsMade()">
+                <span>When the request to get the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects/11</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"11","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"254 GB","Screen size":7.9}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "id" as "11" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "name" as "Apple iPad Mini 5th Gen" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.Capacity" as "254 GB" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.'Screen size'" as "7.9" is present</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Verify an item creation failure Once Post API is Triggered with invalid request body</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToAddTheItemIsMade()">
+                <span>When the request to add the item is made</span>
+      <div>Execution log :: <b>postUrl :: /objects</b><br/>
+      </div>
+      <div>Execution log :: <b>postBody :: XYZ</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 400 :: Bad Request</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"400 Bad Request. If you are trying to create or update the data, potential issue is that you are sending incorrect body json or it is missing at all."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 400 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "400 Bad Request. If you are trying to create or update the data, potential issue is that you are sending incorrect body json or it is missing at all." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>Verify an item can be created Once Post API is Triggered</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemIsCreated(java.lang.String)">
+                <span>Given a "Apple MacBook Pro 16" item is created</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.isACPUModel(java.lang.String)">
+                <span>And is a "Intel Core i9" CPU model</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.hasAPriceOf(java.lang.String)">
+                <span>And has a price of "1849.99"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToAddTheItemIsMade()">
+                <span>When the request to add the item is made</span>
+      <div>Execution log :: <b>postUrl :: /objects</b><br/>
+      </div>
+      <div>Execution log :: <b>postBody :: {"name":"Apple MacBook Pro 16","data":{"year":0,"price":1849.99,"cpuModel":"Intel Core i9"}}</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"ff8081818a394cb8018a992c0e346a34","name":"Apple MacBook Pro 16","createdAt":"2023-09-15T14:08:35.892+00:00","data":{"year":0,"price":1849.99,"cpuModel":"Intel Core i9"}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aIsCreated(java.lang.String)">
+                <span>And a "Apple MacBook Pro 16" is created</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Get API for a Item which Exists and Recently created</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetTheItemIsMade()">
+                <span>When the request to get the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"ff8081818a394cb8018a992c0e346a34","name":"Apple MacBook Pro 16","data":{"year":0,"price":1849.99,"cpuModel":"Intel Core i9"}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "id" as "<NewlyCreatedItem>" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "name" as "Apple MacBook Pro 16" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.price" as "1849.99" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.cpuModel" as "Intel Core i9" is present</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Get API for Set of Items in which all Items Exist</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "10,11,<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetListOfTheItemIsMade()">
+                <span>When the request to get list of the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects?id=10&id=11&id=ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: [{"id":"10","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"64 GB","Screen size":7.9}},{"id":"11","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"254 GB","Screen size":7.9}},{"id":"ff8081818a394cb8018a992c0e346a34","name":"Apple MacBook Pro 16","data":{"year":0,"price":1849.99,"cpuModel":"Intel Core i9"}}]</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theCountOfItemIsInReturnedResponse(java.lang.Integer)">
+                <span>And the count of item is 3 in returned response</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="34"><span class="badge log pass-bg mr-2">Pass</span>Get API for Set of Items in which some Items Exist</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "10,11,99" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetListOfTheItemIsMade()">
+                <span>When the request to get list of the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects?id=10&id=11&id=99</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: [{"id":"10","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"64 GB","Screen size":7.9}},{"id":"11","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"254 GB","Screen size":7.9}}]</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theCountOfItemIsInReturnedResponse(java.lang.Integer)">
+                <span>And the count of item is 2 in returned response</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="39"><span class="badge log pass-bg mr-2">Pass</span>Get API for Set of Items in which none items Exist</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "98,99" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetListOfTheItemIsMade()">
+                <span>When the request to get list of the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects?id=98&id=99</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: []</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theCountOfItemIsInReturnedResponse(java.lang.Integer)">
+                <span>And the count of item is 0 in returned response</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="44"><span class="badge log pass-bg mr-2">Pass</span>Get API for All Items</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetListOfTheItemIsMade()">
+                <span>When the request to get list of the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: [{"id":"1","name":"Google Pixel 6 Pro","data":{"color":"Cloudy White","capacity":"128 GB"}},{"id":"2","name":"Apple iPhone 12 Mini, 256GB, Blue","data":null},{"id":"3","name":"Apple iPhone 12 Pro Max","data":{"color":"Cloudy White","capacity GB":512}},{"id":"4","name":"Apple iPhone 11, 64GB","data":{"price":389.99,"color":"Purple"}},{"id":"5","name":"Samsung Galaxy Z Fold2","data":{"price":689.99,"color":"Brown"}},{"id":"6","name":"Apple AirPods","data":{"generation":"3rd","price":120}},{"id":"7","name":"Apple MacBook Pro 16","data":{"year":2019,"price":1849.99,"CPU model":"Intel Core i9","Hard disk size":"1 TB"}},{"id":"8","name":"Apple Watch Series 8","data":{"Strap Colour":"Elderberry","Case Size":"41mm"}},{"id":"9","name":"Beats Studio3 Wireless","data":{"Color":"Red","Description":"High-performance wireless noise cancelling headphones"}},{"id":"10","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"64 GB","Screen size":7.9}},{"id":"11","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"254 GB","Screen size":7.9}},{"id":"12","name":"Apple iPad Air","data":{"Generation":"4th","Price":"419.99","Capacity":"64 GB"}},{"id":"13","name":"Apple iPad Air","data":{"Generation":"4th","Price":"519.99","Capacity":"256 GB"}}]</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresentInAllItems(java.lang.String,java.lang.String)">
+                <span>And a item with "id" as "11" is present in All Items</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="48"><span class="badge log pass-bg mr-2">Pass</span>Patch API for a Item which does not exist</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "99" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemIsCreated(java.lang.String)">
+                <span>And a "Apple MacBook Pro 16- Updated2" item is created</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToUpdateTheItemUsingIsMade(java.lang.String)">
+                <span>When the request to update the item using "PATCH" is made</span>
+      <div>Execution log :: <b>updateUrl :: /objects/99</b><br/>
+      </div>
+      <div>Execution log :: <b>updateBody :: {"name":"Apple MacBook Pro 16- Updated2"}</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 404 :: Not Found</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"The Object with id = 99 doesn't exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PATCH request after that."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 404 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "The Object with id = 99 doesn't exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PATCH request after that." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="54"><span class="badge log pass-bg mr-2">Pass</span>Put API for a Item which does not exist</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "99" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemIsCreated(java.lang.String)">
+                <span>And a "Apple MacBook Pro 16- Updated1" item is created</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToUpdateTheItemUsingIsMade(java.lang.String)">
+                <span>When the request to update the item using "PUT" is made</span>
+      <div>Execution log :: <b>updateUrl :: /objects/99</b><br/>
+      </div>
+      <div>Execution log :: <b>updateBody :: {"name":"Apple MacBook Pro 16- Updated1"}</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 404 :: Not Found</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"The Object with id = 99 doesn't exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PUT request after that."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 404 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "The Object with id = 99 doesn't exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PUT request after that." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="60"><span class="badge log pass-bg mr-2">Pass</span>Patch API for a Item which is Reserved and valid Request Body</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "11" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemIsCreated(java.lang.String)">
+                <span>And a "Apple MacBook Pro 16- Updated2" item is created</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToUpdateTheItemUsingIsMade(java.lang.String)">
+                <span>When the request to update the item using "PATCH" is made</span>
+      <div>Execution log :: <b>updateUrl :: /objects/11</b><br/>
+      </div>
+      <div>Execution log :: <b>updateBody :: {"name":"Apple MacBook Pro 16- Updated2"}</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 405 :: Method Not Allowed</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"11 is a reserved id and the data object of it cannot be overridden. You can create a new object via POST request and use new generated by id from it to send a PATCH request."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 405 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "11 is a reserved id and the data object of it cannot be overridden. You can create a new object via POST request and use new generated by id from it to send a PATCH request." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="66"><span class="badge log pass-bg mr-2">Pass</span>Put API for a Item which is Reserved and valid Request Body</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "11" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemIsCreated(java.lang.String)">
+                <span>And a "Apple MacBook Pro 16- Updated1" item is created</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToUpdateTheItemUsingIsMade(java.lang.String)">
+                <span>When the request to update the item using "PUT" is made</span>
+      <div>Execution log :: <b>updateUrl :: /objects/11</b><br/>
+      </div>
+      <div>Execution log :: <b>updateBody :: {"name":"Apple MacBook Pro 16- Updated1"}</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 405 :: Method Not Allowed</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"11 is a reserved id and the data object of it cannot be overridden. You can create a new object via POST request and use new generated by id from it to send a PUT request."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 405 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "11 is a reserved id and the data object of it cannot be overridden. You can create a new object via POST request and use new generated by id from it to send a PUT request." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="72"><span class="badge log pass-bg mr-2">Pass</span>Patch API for a Item which Exists but Invalid Request Body</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToUpdateTheItemUsingIsMade(java.lang.String)">
+                <span>When the request to update the item using "PATCH" is made</span>
+      <div>Execution log :: <b>updateUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>updateBody :: XYZ</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 400 :: Bad Request</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"400 Bad Request. If you are trying to create or update the data, potential issue is that you are sending incorrect body json or it is missing at all."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 400 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "400 Bad Request. If you are trying to create or update the data, potential issue is that you are sending incorrect body json or it is missing at all." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="77"><span class="badge log pass-bg mr-2">Pass</span>Put API for a Item which Exists but Invalid Request Body</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToUpdateTheItemUsingIsMade(java.lang.String)">
+                <span>When the request to update the item using "PUT" is made</span>
+      <div>Execution log :: <b>updateUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>updateBody :: XYZ</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 400 :: Bad Request</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"400 Bad Request. If you are trying to create or update the data, potential issue is that you are sending incorrect body json or it is missing at all."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 400 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "400 Bad Request. If you are trying to create or update the data, potential issue is that you are sending incorrect body json or it is missing at all." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="82"><span class="badge log pass-bg mr-2">Pass</span>Patch API for a Item which is Recently Created and valid Request Body</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemIsCreated(java.lang.String)">
+                <span>And a "Apple MacBook Pro 16- Updated2" item is created</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToUpdateTheItemUsingIsMade(java.lang.String)">
+                <span>When the request to update the item using "PATCH" is made</span>
+      <div>Execution log :: <b>updateUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>updateBody :: {"name":"Apple MacBook Pro 16- Updated2"}</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"ff8081818a394cb8018a992c0e346a34","name":"Apple MacBook Pro 16- Updated2","updatedAt":"2023-09-15T14:08:40.362+00:00","data":{"year":0,"price":1849.99,"cpuModel":"Intel Core i9"}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "id" as "<NewlyCreatedItem>" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "name" as "Apple MacBook Pro 16- Updated2" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.price" as "1849.99" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.cpuModel" as "Intel Core i9" is present</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="91"><span class="badge log pass-bg mr-2">Pass</span>Get API for a Item which recently updated using Patch</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetTheItemIsMade()">
+                <span>When the request to get the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"ff8081818a394cb8018a992c0e346a34","name":"Apple MacBook Pro 16- Updated2","data":{"year":0,"price":1849.99,"cpuModel":"Intel Core i9"}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "id" as "<NewlyCreatedItem>" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "name" as "Apple MacBook Pro 16- Updated2" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.price" as "1849.99" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.cpuModel" as "Intel Core i9" is present</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="99"><span class="badge log pass-bg mr-2">Pass</span>Put API for a Item which is Recently Created and valid Request Body</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemIsCreated(java.lang.String)">
+                <span>And a "Apple MacBook Pro 16- Updated3" item is created</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.hasAPriceOf(java.lang.String)">
+                <span>And has a price of "1899.99"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToUpdateTheItemUsingIsMade(java.lang.String)">
+                <span>When the request to update the item using "PATCH" is made</span>
+      <div>Execution log :: <b>updateUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>updateBody :: {"name":"Apple MacBook Pro 16- Updated3","data":{"year":0,"price":1899.99}}</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"ff8081818a394cb8018a992c0e346a34","name":"Apple MacBook Pro 16- Updated3","updatedAt":"2023-09-15T14:08:41.173+00:00","data":{"year":0,"price":1899.99}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "id" as "<NewlyCreatedItem>" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "name" as "Apple MacBook Pro 16- Updated3" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.price" as "1899.99" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.cpuModel" as "null" is present</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="109"><span class="badge log pass-bg mr-2">Pass</span>Get API for a Item which recently updated using Put</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetTheItemIsMade()">
+                <span>When the request to get the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"ff8081818a394cb8018a992c0e346a34","name":"Apple MacBook Pro 16- Updated3","data":{"year":0,"price":1899.99}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "id" as "<NewlyCreatedItem>" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "name" as "Apple MacBook Pro 16- Updated3" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.price" as "1899.99" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.cpuModel" as "null" is present</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="117"><span class="badge log pass-bg mr-2">Pass</span>Delete API for a Item which Exists</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToDeleteTheItemIsMade()">
+                <span>When the request to delete the item is made</span>
+      <div>Execution log :: <b>deleteUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"message":"Object with id = ff8081818a394cb8018a992c0e346a34 has been deleted."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aMessageWithTextIsReturned(java.lang.String)">
+                <span>And a message with text "Object with id = <NewlyCreatedItem> has been deleted." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="122"><span class="badge log pass-bg mr-2">Pass</span>Get API for a Item which does not Exist</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetTheItemIsMade()">
+                <span>When the request to get the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 404 :: Not Found</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"Oject with id=ff8081818a394cb8018a992c0e346a34 was not found."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 404 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "Oject with id=<NewlyCreatedItem> was not found." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="127"><span class="badge log pass-bg mr-2">Pass</span>Delete API for a Item which does not Exist</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "<NewlyCreatedItem>" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToDeleteTheItemIsMade()">
+                <span>When the request to delete the item is made</span>
+      <div>Execution log :: <b>deleteUrl :: /objects/ff8081818a394cb8018a992c0e346a34</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 404 :: Not Found</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"Object with id = ff8081818a394cb8018a992c0e346a34 doesn't exist."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 404 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "Object with id = <NewlyCreatedItem> doesn't exist." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="132"><span class="badge log pass-bg mr-2">Pass</span>Delete API for a Item which is Reserved</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "11" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToDeleteTheItemIsMade()">
+                <span>When the request to delete the item is made</span>
+      <div>Execution log :: <b>deleteUrl :: /objects/11</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 405 :: Method Not Allowed</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"error":"11 is a reserved id and the data object of it cannot be deleted. You can create your own new object via POST request and try to send a DELETE request with new generated object id."}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 405 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.anErrorWithTextIsReturned(java.lang.String)">
+                <span>And an error with text "11 is a reserved id and the data object of it cannot be deleted. You can create your own new object via POST request and try to send a DELETE request with new generated object id." is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="137"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Different Operation supported by Objects Rest API</p>
+            <p class="text-sm">
+              <span>7:38:41 PM</span> / <span>00:00:01:466</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Different Operation supported by Objects Rest API</h5>
+<span class='badge badge-success'>09.15.2023 7:38:41 PM</span>
+<span class='badge badge-danger'>09.15.2023 7:38:42 PM</span>
+<span class='badge badge-default'>00:00:01:466</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=137</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="138"><span class="badge log pass-bg mr-2">Pass</span>Verify an item can be created</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemIsCreated(java.lang.String)">
+                <span>Given a "Apple MacBook Pro 16" item is created</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.isACPUModel(java.lang.String)">
+                <span>And is a "Intel Core i9" CPU model</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.hasAPriceOf(java.lang.String)">
+                <span>And has a price of "1849.99"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToAddTheItemIsMade()">
+                <span>When the request to add the item is made</span>
+      <div>Execution log :: <b>postUrl :: /objects</b><br/>
+      </div>
+      <div>Execution log :: <b>postBody :: {"name":"Apple MacBook Pro 16","data":{"year":0,"price":1849.99,"cpuModel":"Intel Core i9"}}</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"ff8081818a394cb8018a992c2a7d6a36","name":"Apple MacBook Pro 16","createdAt":"2023-09-15T14:08:43.133+00:00","data":{"year":0,"price":1849.99,"cpuModel":"Intel Core i9"}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aIsCreated(java.lang.String)">
+                <span>And a "Apple MacBook Pro 16" is created</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="145"><span class="badge log pass-bg mr-2">Pass</span>Ability to return an item</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "11" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetTheItemIsMade()">
+                <span>When the request to get the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects/11</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: {"id":"11","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"254 GB","Screen size":7.9}}</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "id" as "11" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "name" as "Apple iPad Mini 5th Gen" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.Capacity" as "254 GB" is present</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aItemWithAsIsPresent(java.lang.String,java.lang.String)">
+                <span>And a item with "data.'Screen size'" as "7.9" is present</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="153"><span class="badge log pass-bg mr-2">Pass</span>Ability to list multiple items</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aDataForItemIsNeeded(java.lang.String)">
+                <span>Given a data for item "11,12,13" is needed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetListOfTheItemIsMade()">
+                <span>When the request to get list of the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects?id=11&id=12&id=13</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: [{"id":"11","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"254 GB","Screen size":7.9}},{"id":"12","name":"Apple iPad Air","data":{"Generation":"4th","Price":"419.99","Capacity":"64 GB"}},{"id":"13","name":"Apple iPad Air","data":{"Generation":"4th","Price":"519.99","Capacity":"256 GB"}}]</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="157"><span class="badge log pass-bg mr-2">Pass</span>Ability to full list multiple items</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdef.StepDefinitions.theRequestToGetListOfTheItemIsMade()">
+                <span>When the request to get list of the item is made</span>
+      <div>Execution log :: <b>getUrl :: /objects</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseStatus :: 200 :: OK</b><br/>
+      </div>
+      <div>Execution log :: <b>ResponseBody :: [{"id":"1","name":"Google Pixel 6 Pro","data":{"color":"Cloudy White","capacity":"128 GB"}},{"id":"2","name":"Apple iPhone 12 Mini, 256GB, Blue","data":null},{"id":"3","name":"Apple iPhone 12 Pro Max","data":{"color":"Cloudy White","capacity GB":512}},{"id":"4","name":"Apple iPhone 11, 64GB","data":{"price":389.99,"color":"Purple"}},{"id":"5","name":"Samsung Galaxy Z Fold2","data":{"price":689.99,"color":"Brown"}},{"id":"6","name":"Apple AirPods","data":{"generation":"3rd","price":120}},{"id":"7","name":"Apple MacBook Pro 16","data":{"year":2019,"price":1849.99,"CPU model":"Intel Core i9","Hard disk size":"1 TB"}},{"id":"8","name":"Apple Watch Series 8","data":{"Strap Colour":"Elderberry","Case Size":"41mm"}},{"id":"9","name":"Beats Studio3 Wireless","data":{"Color":"Red","Description":"High-performance wireless noise cancelling headphones"}},{"id":"10","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"64 GB","Screen size":7.9}},{"id":"11","name":"Apple iPad Mini 5th Gen","data":{"Capacity":"254 GB","Screen size":7.9}},{"id":"12","name":"Apple iPad Air","data":{"Generation":"4th","Price":"419.99","Capacity":"64 GB"}},{"id":"13","name":"Apple iPad Air","data":{"Generation":"4th","Price":"519.99","Capacity":"256 GB"}}]</b><br/>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdef.StepDefinitions.aResponseCodeIsReturned(java.lang.Integer)">
+                <span>Then a 200 response code is returned</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

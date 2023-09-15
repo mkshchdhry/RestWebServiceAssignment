@@ -10,7 +10,7 @@ public class Data {
     @JsonAlias({"year"})
     private int year;
 
-    @JsonAlias({"year"})
+    @JsonAlias({"price"})
     private double price;
 
     @JsonAlias({"CPU model"})

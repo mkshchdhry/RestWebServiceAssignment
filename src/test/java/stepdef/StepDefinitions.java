@@ -25,7 +25,6 @@ public class StepDefinitions {
         ReportLogger.logInfo(false,true,"**** aItemIsCreated *****");
         if(item == null){
           item = new Item();
-          item.setData(new Data());
         }
         item.setName(name);
     }
@@ -35,6 +34,8 @@ public class StepDefinitions {
         ReportLogger.logInfo(false,true,"**** isACPUModel *****");
         if(item == null){
             item = new Item();
+        }
+        if(item.getData() == null){
             item.setData(new Data());
         }
         item.getData().setCpuModel(cpuModel);
@@ -45,6 +46,8 @@ public class StepDefinitions {
         ReportLogger.logInfo(false,true,"**** hasAPriceOf *****");
         if(item == null){
             item = new Item();
+        }
+        if(item.getData() == null){
             item.setData(new Data());
         }
         item.getData().setPrice(Double.parseDouble(price));
@@ -77,6 +80,14 @@ public class StepDefinitions {
         ReportLogger.logInfo(false,true,"**** theRequestToGetListOfTheItemIsMade *****");
         response = ItemService.getRequestForMultipleItemRest(itemsIdForGet);
         itemsIdForGet = null;
+    }
+
+    @When("the request to update the item using {string} is made")
+    public void theRequestToUpdateTheItemUsingIsMade(String operation) throws Exception {
+        ReportLogger.logInfo(false,true,"**** theRequestToUpdateTheItemUsingIsMade *****");
+        response = ItemService.updateRequestForSingleItemRest(operation.equalsIgnoreCase("PUT"),itemsIdForGet,item);
+        itemsIdForGet = null;
+        item=null;
     }
 
     @When("the request to delete the item is made")
@@ -117,7 +128,10 @@ public class StepDefinitions {
         String expectedValue =data.replace("<NewlyCreatedItem>",newlyCreatedResourceId);
         JsonPath jsonData = JsonPath.from(response.text());
         String actualValue = jsonData.getString(elePath);
-        assertEquals("Value of Item "+elePath+" is not matching.",expectedValue, actualValue);
+        if (expectedValue.equalsIgnoreCase("null"))
+            Assert.assertNull("Value of Item "+elePath+" is not null",actualValue);
+        else
+            assertEquals("Value of Item "+elePath+" is not matching.",expectedValue, actualValue);
     }
 
     @Then("an error with text {string} is returned")
@@ -160,4 +174,6 @@ public class StepDefinitions {
                 .orElse(null);
         Assert.assertNotNull("Item with id ::" +expectedValue + " is not Preset in Item list" ,myItemObj);
     }
+
+
 }

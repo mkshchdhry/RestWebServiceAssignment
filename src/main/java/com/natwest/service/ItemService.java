@@ -4,6 +4,7 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.*;
 import com.natwest.model.Item;
 import com.natwest.utility.ReportLogger;
+import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonInclude;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.*;
 
@@ -14,7 +15,9 @@ public class ItemService {
 
     public static APIResponse sendPostRequestForRest(Item item) throws Exception {
         String postUrl = "/objects";
-        String jsonItem = new ObjectMapper().writeValueAsString(item);
+        ObjectMapper mapper = new ObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        String jsonItem = Objects.isNull(item)?"XYZ":mapper.writeValueAsString(item);
+
         ReportLogger.logInfo(true,true,"postUrl :: " + postUrl);
         ReportLogger.logInfo(true,true,"postBody :: " + jsonItem);
 
@@ -23,6 +26,22 @@ public class ItemService {
 
         ReportLogger.logInfo(true,true,"ResponseStatus :: " + response.status() + " :: " + response.statusText());
         ReportLogger.logInfo(true,true,"ResponseBody :: " + response.text());
+        return response;
+    }
+
+    public static APIResponse updateRequestForSingleItemRest(boolean isPutOperation, String itemsId, Item item) throws Exception {
+        String updateUrl = "/objects/" + itemsId;
+        ObjectMapper mapper = new ObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        String jsonItem = Objects.isNull(item) ? "XYZ" : mapper.writeValueAsString(item);
+
+        ReportLogger.logInfo(true, true, "updateUrl :: " + updateUrl);
+        ReportLogger.logInfo(true, true, "updateBody :: " + jsonItem);
+
+        RequestOptions requestOptions = RequestOptions.create().setData(jsonItem);
+        APIResponse response = (isPutOperation) ? request.put(updateUrl, requestOptions) : request.patch(updateUrl, requestOptions);
+
+        ReportLogger.logInfo(true, true, "ResponseStatus :: " + response.status() + " :: " + response.statusText());
+        ReportLogger.logInfo(true, true, "ResponseBody :: " + response.text());
         return response;
     }
 
@@ -56,10 +75,10 @@ public class ItemService {
     }
 
     public static APIResponse deleteRequestForSingleItemRest(String itemsId) {
-        String getUrl = "/objects/"+ itemsId;
-        ReportLogger.logInfo(true,true,"getUrl :: " + getUrl);
+        String deleteUrl = "/objects/"+ itemsId;
+        ReportLogger.logInfo(true,true,"deleteUrl :: " + deleteUrl);
 
-        APIResponse response = request.delete(getUrl);
+        APIResponse response = request.delete(deleteUrl);
 
         ReportLogger.logInfo(true,true,"ResponseStatus :: " + response.status() + " :: " + response.statusText());
         ReportLogger.logInfo(true,true,"ResponseBody :: " + response.text());
